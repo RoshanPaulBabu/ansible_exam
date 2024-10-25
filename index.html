@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      ansible-doc -l | grep file ansible-doc ansible-playbook sample.yml ansible
+      -m ping all ansible all -m yum -a "name=httpd state=present“
+      ansible-playbook -i inventory sample.yml ##role file structure
+      ansible-galaxy init my_role ___________________________ vars.yml _________
+      some_var_name: name or some_var_name: - name - name - name
+      ____________________________ playbookyml ______________ - name: sfsd
+      hosts: all become: true vars: packages: - name - name - name vars_files:
+      adsa or - dahs.yml - jkh.yml tasks: - name: kjkhkhs module_name: name: "{{
+      item }}" loop: "{{ packages }}"
+      _____________________________________________________________ Ansible
+      vault _____________ ansible-vault -h ansible-vault create
+      --vault-password-file=pass secret.yml ____________ vault play run
+      ______________ ansible-playbook --ask -h
+      ______________________________________________________________
+      ansible-galaxy collection install ansible.posix
+      __________________________________________________________ Roles ______
+      using roles --- - name: Apply web server role hosts: webservers become:
+      yes roles: - myrole ________________________________________________
+      theres a module called firewalld, and template
+      ----------------------------------------------- # Deploy index.html using
+      a template - name: Deploy index.html from template template: src: index.j2
+      dest: /var/www/html/index.html owner: apache group: apache mode: '0644'
+      ________________________________ ansible all -m setup
+      ______________________ sudo yum install rhel-system-roles --- - name:
+      Configure NTP Time Synchronization hosts: all become: yes vars:
+      timesync_ntp_servers: - time.google.com # Use Google's NTP server roles: -
+      rhel-system-roles.timesync # Use the timesync role from the system roles
+      _________________________________________________________________________________________
+    </p>
+  </body>
+</html>
